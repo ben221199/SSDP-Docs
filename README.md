@@ -58,7 +58,7 @@ When sending a response, send it with the following fallback is:
 
 ### `ANNOUNCE`
 
-Defined in `00` and `01`. Likely deprecated.
+Defined in `00` and `01`. Likely deprecated in favour of [`NOTIFY`](#notify).
 
 #### Request
 
@@ -68,7 +68,7 @@ Defined in `00` and `01`. Likely deprecated.
 
 | Header | Requirement | Description |
 | - | - | - |
-| `Host` | \* | See HTTP. |
+| `Host` | UNKNOWN\* | See HTTP. |
 | `Content-Length` | MAY | See HTTP. Useful when having request body. |
 | `Content-Type` | MAY | See HTTP. Useful when having request body. |
 | `Location` | SHOULD | See HTTP. This URI will be announced as protocol endpoint. |
@@ -77,6 +77,7 @@ Defined in `00` and `01`. Likely deprecated.
 A request body is optional.
 
 \* The `Host` header is only visible in the example, but nowhere in the text. It is unknown if it is required or optional.
+
 \*\* Only `SHOULD` if the service provider has multiple URIs.
 
 #### Response

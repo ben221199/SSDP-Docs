@@ -19,7 +19,7 @@ Defined in `00` and `01`. Likely deprecated in favour of [`SEARCH` (`M-SEARCH`)]
 
 #### Request
 
- - **Method:** OPTIONS
+ - **Method:** `OPTIONS`
  - **Request URI:** `...TODO...`
  - **Version:** HTTP/1.1
 
@@ -59,6 +59,29 @@ When sending a response, send it with the following fallback is:
 ### `ANNOUNCE`
 
 Defined in `00` and `01`. Likely deprecated.
+
+#### Request
+
+ - **Method:** `ANNOUNCE`
+ - **Request URI:** `...TODO...`
+ - **Version:** HTTP/1.1
+
+| Header | Requirement | Description |
+| - | - | - |
+| `Host` | \* | See HTTP. |
+| `Content-Length` | MAY | See HTTP. Useful when having request body. |
+| `Content-Type` | MAY | See HTTP. Useful when having request body. |
+| `Location` | SHOULD | See HTTP. This URI will be announced as protocol endpoint. |
+| `Alt-Locations` | SHOULD\*\* | This URIs will be announced as protocol endpoint. |
+
+A request body is optional.
+
+\* The `Host` header is only visible in the example, but nowhere in the text. It is unknown if it is required or optional.
+\*\* Only `SHOULD` if the service provider has multiple URIs.
+
+#### Response
+
+No response.
 
 ### `SUBSCRIBE`
 

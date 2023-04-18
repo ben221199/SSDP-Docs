@@ -15,12 +15,12 @@ A full documentation of SSDP to be used in a definitive SSDP RFC specification.
 
 ### `OPTIONS`
 
-Defined in `00` and `01`. Likely deprecated in favour of `SEARCH`
+Defined in `00` and `01`. Likely deprecated in favour of [`SEARCH` (`M-SEARCH`)](#search-m-search).
 
 #### Request
 
  - **Method:** OPTIONS
- - **Request URI:** [TODO]
+ - **Request URI:** `...TODO...`
  - **Version:** HTTP/1.1
 
 | Header | Requirement | Description |
@@ -29,10 +29,12 @@ Defined in `00` and `01`. Likely deprecated in favour of `SEARCH`
 | `Request-ID` | MUST | An ID to link request and response to eachother. |
 | `Content-Length` | MAY | See HTTP. Useful when having request body. |
 | `Content-Type` | MAY | See HTTP. Useful when having request body. |
-| `Location` | OPTIONAL | See HTTP. Not listed in request section. Send request to this location if present. |
-| `Alt-Locations` | OPTIONAL | Not listed in request section. Send request to one of these locations if present. |
+| `Location` | \* | See HTTP. Send response to this location if present. |
+| `Alt-Locations` | \* | Send response to one of these locations if present. |
 
 A request body is optional.
+
+\* Not listed in request section, but seems OPTIONAL.
 
 #### Response
 
@@ -44,8 +46,10 @@ A request body is optional.
 | `Request-ID` | MUST | The same values as in the request. |
 | `Content-Length` | MAY | See HTTP. Useful when having response body. |
 | `Content-Type` | MAY | See HTTP. Useful when having response body. |
-| `Location` | OPTIONAL | See HTTP. Send alternative location with a 3xx status. |
-| `Alt-Locations` | OPTIONAL | Send alternative locations with a 3xx status. |
+| `Location` | SHOULD | See HTTP. Send alternative location with a 3xx status for retry. |
+| `Alt-Locations` | SHOULD | Send alternative locations with a 3xx status for retry. |
+
+A response body is optional.
 
 When sending a response, send it with the following fallback is:
  1. `Location`

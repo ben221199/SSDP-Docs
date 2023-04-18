@@ -52,9 +52,9 @@ A request body is optional.
 A response body is optional.
 
 When sending a response, send it with the following fallback is:
- 1. `Location`
- 2. `Alt-Locations`
- 3. UDP Sender
+ 1. `Location` from the request
+ 2. `Alt-Locations` from the request
+ 3. UDP Sender of the request
 
 ### `ANNOUNCE`
 

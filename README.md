@@ -140,7 +140,46 @@ No response.
 
 ### `SEARCH` (`M-SEARCH`)
 
-Defined in `02` and `03`.
+Defined in `02` and `03`, originally specified in [RFC 5323 (WebDAV SEARCH)](https://tools.ietf.org/html/rfc5323), formerly DASL (DAV Searching and Locating).
+
+#### Request
+
+ - **Method:** `M-SEARCH` (mandatory `SEARCH`)
+ - **Request URI:** `...TODO...`
+ - **Version:** HTTP/1.1
+ 
+ | Header | Requirement | Description |
+| - | - | - |
+| `Host` | UNKNOWN\* | See HTTP. |
+| `Man` | ? | ? |
+| `ST` | MUST | Some <ins>**S**</ins>ervice <ins>**T**</ins>ype. |
+| `MM` | ? | Unknown. |
+| `MX` | ? | Unknown. |
+| `S` | ? | Unknown, but seems to be some id. |
+
+A request body is optional.
+
+\* This header is only visible in the example, but nowhere in the text. It is unknown if it is required or optional.
+
+#### Response
+
+ - **Version:** HTTP/1.1
+ - **Status:** 200 (OK) or 207 (Multi-status)
+ 
+| Header | Requirement | Description |
+| - | - | - |
+| `ST` | MUST | Some <ins>**S**</ins>ervice <ins>**T**</ins>ype. |
+| `USN` | MUST | Some <ins>**U**</ins>nique <ins>**S**</ins>ervice <ins>**N**</ins>ame. |
+| `Location` | SHOULD | Some location. |
+| `AL` | SHOULD | Some <ins>**A**</ins>lternative <ins>**L**</ins>ocations. |
+| `Content-Length` | ? | See HTTP. Useful when having response body. |
+| `Content-Type` | ? | See HTTP. Useful when having response body. |
+| `S` | ? | Unknown, but seems to be some id. |
+| `Ext` | ? | Unknown. |
+| `Cache-Control` | SHOULD | If caching data. |
+| `Expires` | SHOULD | If caching data. |
+
+A response body is optional.
 
 ### `NOTIFY`
 

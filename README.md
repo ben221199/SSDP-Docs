@@ -15,7 +15,7 @@ A full documentation of SSDP to be used in a definitive SSDP RFC specification.
 
 ### `OPTIONS`
 
-Defined in `00` and `01`. Likely deprecated in favour of [`SEARCH` (`M-SEARCH`)](#search-m-search).
+Defined in `00` and `01`, originally specified in [RFC 2068 (HTTP/1.1)](https://tools.ietf.org/html/rfc2068). Likely deprecated in favour of [`SEARCH` (`M-SEARCH`)](#search-m-search).
 
 #### Request
 
@@ -58,7 +58,7 @@ When sending a response, send it with the following fallback is:
 
 ### `ANNOUNCE`
 
-Defined in `00` and `01`. Likely deprecated in favour of [`NOTIFY`](#notify).
+Defined in `00` and `01`, originally specified in [RFC 2326 (RTSP/1.1)](https://tools.ietf.org/html/rfc2326). Likely deprecated in favour of [`NOTIFY`](#notify).
 
 #### Request
 
@@ -86,11 +86,29 @@ No response.
 
 ### `SUBSCRIBE`
 
-Defined in `02`. Likely deprecated.
+Defined in `02`, originally specified in [draft-cohen-gena-client-00](https://tools.ietf.org/html/draft-cohen-gena-client-00). Likely deprecated.
 
 ### `SSDPC`
 
 Defined in `02`. Likely deprecated.
+
+#### Request
+
+ - **Method:** `SSDPC`
+ - **Request URI:** `...TODO...`
+ - **Version:** HTTP/1.1
+
+| Header | Requirement | Description |
+| - | - | - |
+| `Host` | UNKNOWN\* | See HTTP. |
+| `PN` | MUST | Some <ins>**P**</ins>roxy <ins>**N**</ins>umber. |
+| `USN` | MUST |Some <ins>**U**</ins>nique <ins>**S**</ins>ervice <ins>**N**</ins>ame. |
+
+\* The `Host` header is only visible in the example, but nowhere in the text. It is unknown if it is required or optional.
+
+#### Response
+
+No response.
 
 ### `SEARCH` (`M-SEARCH`)
 

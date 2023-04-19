@@ -88,6 +88,34 @@ No response.
 
 Defined in `02`, originally specified in [draft-cohen-gena-client-00](https://tools.ietf.org/html/draft-cohen-gena-client-00). Likely deprecated.
 
+#### Request
+
+ - **Method:** `SUBSCRIBE`
+ - **Request URI:** `...TODO...`
+ - **Version:** HTTP/1.1
+
+| Header | Requirement | Description |
+| - | - | - |
+| `Host` | UNKNOWN\* | See HTTP. |
+| `NT` | "is to be" | Some <ins>**N**</ins>otification <ins>**T**</ins>ype. |
+| `Callback` | UNKNOWN\* | Some callback. |
+| `Scope` | UNKNOWN\* | Some scope. |
+| `Timeout` | UNKNOWN\* | Some timeout. |
+
+\* This header is only visible in the example, but nowhere in the text. It is unknown if it is required or optional.
+
+#### Response
+
+ - **Version:** HTTP/1.1
+ - **Status:** 200 (OK)
+
+| Header | Requirement | Description |
+| - | - | - |
+| `Subscription-ID` | UNKNOWN\* | The id of the subscription. |
+| `Timeout` | UNKNOWN\* | Some timeout. |
+
+\* This header is only visible in the example, but nowhere in the text. It is unknown if it is required or optional.
+
 ### `SSDPC`
 
 Defined in `02`. Likely deprecated.

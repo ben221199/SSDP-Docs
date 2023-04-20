@@ -184,3 +184,28 @@ A response body is optional.
 ### `NOTIFY`
 
 Defined in `02` and `03`.
+
+#### Request
+
+ - **Method:** `NOTIFY`
+ - **Request URI:** `...TODO...`
+ - **Version:** HTTP/1.1
+ 
+ | Header | Requirement | Description |
+| - | - | - |
+| `Host` | UNKNOWN\* | See HTTP. |
+| `NT` | MUST | Some <ins>**N**</ins>otification <ins>**T**</ins>ype. |
+| `NTS` | ? | Some <ins>**N**</ins>otification <ins>**T**</ins>ype <ins>**S**</ins>ub. |
+| `USN` | MUST | Some <ins>**U**</ins>nique <ins>**S**</ins>ervice <ins>**N**</ins>ame. |
+| `AL` | SHOULD | Some <ins>**A**</ins>lternative <ins>**L**</ins>ocations. |
+| `Location` | SHOULD | Some location. |
+| `Cache-Control` | SHOULD | If caching data. |
+| `PN` | MUST (if proxy) | Some <ins>**P**</ins>roxy <ins>**N**</ins>umber. |
+
+A request body is optional.
+
+\* This header is only visible in the example, but nowhere in the text. It is unknown if it is required or optional.
+
+#### Response
+
+No response, when over HTTPU.

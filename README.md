@@ -151,10 +151,10 @@ Defined in `02` and `03`, originally specified in [RFC 5323 (WebDAV SEARCH)](htt
  | Header | Requirement | Description |
 | - | - | - |
 | `Host` | UNKNOWN\* | See HTTP. |
-| `Man` | ? | ? |
+| `Man` | ? | Mandatory extension. |
 | `ST` | MUST | Some <ins>**S**</ins>ervice <ins>**T**</ins>ype. |
-| `MM` | ? | Unknown. |
-| `MX` | ? | Unknown. |
+| `MM` | ? | <ins>**M**</ins>ini<ins>**m**</ins>um number of seconds a service must wait before it sends a response |
+| `MX` | ? | <ins>**M**</ins>a<ins>**x**</ins>imum number of seconds a service must wait before it sends a response |
 | `S` | ? | Unknown, but seems to be some id. |
 
 A request body is optional.
